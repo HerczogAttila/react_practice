@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import styles from './App.css';
+import './App.css';
 import Persons from '../components/Persons/Persons';
 import Cockpit from '../components/Cockpit/Cockpit';
 
@@ -32,7 +32,7 @@ class App extends Component {
 
   deletePersonHandler = (personIndex) => {
     const persons = [...this.state.persons];
-    persons.slice(personIndex, 1);
+    persons.splice(personIndex, 1);
     this.setState({persons: persons});
   };
 
@@ -54,7 +54,7 @@ class App extends Component {
     }
 
     return (
-      <div className={styles.App}>
+      <div className="App">
         <Cockpit persons={this.state.persons}
                  showPersons={this.state.ShowPersons}
                  clicked={this.togglePersonsHandler}
